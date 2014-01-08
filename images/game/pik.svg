@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="100px" height="106px" viewBox="0 0 100 106" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>pik</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="pik" sketch:type="MSArtboardGroup" transform="translate(-50.000000, -97.000000)" fill="#444444">
+            <g id="favorite-4-icon-+-Rectangle-1" sketch:type="MSLayerGroup" transform="translate(50.000000, 97.500000)">
+                <path d="M49.9999737,78.5285219 C61.0929349,101.23586 93.809197,95.5407051 99.0050708,73.1111501 C107.46211,36.6030506 59.493663,20.003281 49.9999737,-0.121724221 C40.5062844,20.003281 -7.4621622,36.6025637 0.994876633,73.1111501 C6.1905077,95.5402182 38.9070126,101.23586 49.9999737,78.5285219 Z" id="favorite-4-icon" sketch:type="MSShapeGroup"></path>
+                <path d="M50,81 C48.8615456,94.424896 38.2855581,105 25,105 L75,105 C61.9316004,104.746006 50.9794495,94.2639356 50,81 Z" id="Rectangle-1" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
