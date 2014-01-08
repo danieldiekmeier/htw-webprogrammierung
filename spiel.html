@@ -15,7 +15,6 @@
 		<style>
 			/* Aus Gründen der Redundanz und einfacher Bearbeitung wird an dieser Stelle kein echtes CSS eingebunden. */
 		</style>
-
 	</head>
 	<body>
 		<header>
@@ -36,26 +35,46 @@
 				</nav>
 			</div>
 		</header>
-		<section class="hero" style="background-image: url('images/cat.jpg');">
+		<section class="hero" style="background-image: url('images/cat4.jpg');">
 			<div class="limiter">
-				<h1>Catstagram</h1>
-				<h2>Like that thing, but with cats</h2>
+				<h1>Ein Spiel</h1>
+				<h2>Katzen lieben Spiele</h2>
+			</div>
+		</section>
+		<section class="game">
+			<div id="board" class="limiter">
+				<div class="game_grid">
+					<div class="game_grid_column column-left">
+						<div id="pile_unused" class="cardpile">
+							<!-- Wo du unbenutzten Karten sind -->
+						</div>
+						<div id="notification_center" class="notification_center"></div>
+					</div>
+					<div class="game_grid_column column-right">
+						<div id="cards_dealer" class="cardrow">
+
+						</div>
+						<div id="cards_player" class="cardrow">
+
+						</div>
+					</div>
+				</div>
+				<div class="game_grid scores">
+					<div class="game_grid_column column-left">
+						<!-- Scores: -->
+					</div>
+					<div class="game_grid_column column-right">
+						Dealer: <span id="score_dealer">0</span>
+					</div>
+					<div class="game_grid_column column-right">
+						Player: <span id="score_player">0</span>
+					</div>
+				</div>
 			</div>
 		</section>
 		<section class="content">
 			<div class="limiter">
-				<p><strong>Catstagram</strong> ist mehr als nur eine App. Okay, nein, das war Blödsinn, noch mal von vorne. <strong>Catstagram</strong> ist genau eine App. Die App, auf die Du schon dein ganzes Leben lang gewartet hast!</p>
-				<p>Du kennst vermutlich diese andere App, mit den Fotos und den Sachen, und <strong>Catstagram</strong> ist genauso, nur besser, anders und mit Katzen. Bald in einem App Store in deiner Nähe!</p>
-			</div>
-		</section>
-		<section class="color">
-			<div class="limiter">
-				<img src="images/iphone.png" id="iphone" alt="">
-			</div>
-		</section>
-		<section class="content">
-			<div class="limiter">
-				Melden Sie sich bitte auch für unseren analogen Newsletter an, indem sie uns eine Postkarte an unsere Büroadresse schicken.
+				<p>Hier fordert Sie der Dealer (der vielleicht eine Katze ist) zu einer Runde Black Jack heraus. Falls Sie die Black Jack-Regeln noch nicht können, schauen Sie doch mal hier rein:  <a href="http://de.wikipedia.org/wiki/Black_Jack#Die_Regeln">Black Jack-Regeln auf Wikipedia</a>.</p>
 			</div>
 		</section>
 		<footer>
@@ -64,5 +83,7 @@
 				<p class="right"></p>
 			</div>
 		</footer>
+
+		<script src="scripts/game.js" type="text/javascript"></script>
 	</body>
 </html>

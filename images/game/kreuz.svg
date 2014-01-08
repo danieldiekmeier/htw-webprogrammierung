@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="104px" height="108px" viewBox="0 0 104 108" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>kreuz</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="kreuz" sketch:type="MSArtboardGroup" transform="translate(-48.000000, -96.000000)" fill="#444444">
+            <g id="Oval-1-+-Rectangle-1" sketch:type="MSLayerGroup" transform="translate(48.000000, 96.500000)">
+                <path d="M78,45 C92.3594042,45 104,56.6405958 104,71 C104,85.3594042 92.3594042,97 78,97 C63.6405958,97 52,85.3594042 52,71 C52,70.6651468 52.0063301,70.3317722 52.0188772,69.9999891 C51.9936699,70.3317722 52,70.6651468 52,71 C52,85.3594042 40.3594042,97 26,97 C11.6405958,97 0,85.3594042 0,71 C0,56.6405958 11.6405958,45 26,45 C30.0630603,45 33.9084437,45.931985 37.3340335,47.5938381 C30.5086744,42.8201805 26,34.9366192 26,26 C26,11.6405958 37.6405958,0 52,0 C66.3594042,0 78,11.6405958 78,26 C78,34.9366193 73.4913255,42.8201806 66.6245901,47.5000704 C70.0915563,45.931985 73.9369397,45 78,45 Z" id="Oval-1" sketch:type="MSShapeGroup"></path>
+                <path d="M52,83.5 C50.8615456,96.924896 40.2855581,107.5 27,107.5 L77,107.5 C63.9316004,107.246006 52.9794495,96.7639356 52,83.5 Z" id="Rectangle-1" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
