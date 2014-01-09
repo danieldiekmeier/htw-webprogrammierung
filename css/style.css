@@ -266,7 +266,7 @@ footer {
 			font-size: 2em;
 			line-height: 1.1em;
 		}
-			.notification_center .replay_button {
+			.notification_center .button {
 				font-family: "Roboto", Helvetica, Arial, sans-serif;
 				display: block;
 				width: 100%;
@@ -281,7 +281,7 @@ footer {
 				font-weight: bold;
 				box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
 			}
-				.notification_center .replay_button:active {
+				.notification_center .button:active {
 					top: 2px;
 					box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2) inset;
 					outline: 0;

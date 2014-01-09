@@ -3,19 +3,52 @@ var COLORS = ['Kreuz', 'Pik', 'Herz', 'Karo'];
 var TYPES = ['Ass', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'Bube', 'Dame', 'König'];
 var TYPE_CLASSNAMES = ['ace', 'value-2', 'value-3', 'value-4', 'value-5', 'value-6', 'value-7', 'value-8', 'value-9', 'value-10', 'jack', 'queen', 'king'];
 var row_offset = 0;
+var end_button = false;
+var score_player = 0;
+var score_dealer = 0;
 
 function end_game() {
 	var top_card_element = document.getElementById('pile_unused').children[0];
 	top_card_element.removeEventListener('mousedown', play, false);
 	top_card_element.className = top_card_element.className + ' finished';
 
-	var notification_center = document.getElementById('notification_center');
-	var replay_button = document.createElement('button');
-	replay_button.className = 'replay_button';
-	replay_button.innerHTML = 'Nochmal';
-	replay_button.addEventListener('click', reset_table, false);
+	show_replay_button();
+}
 
-	notification_center.appendChild(replay_button);
+function evaluate_game() {
+	if (score_player > score_dealer && score_dealer < 16) {
+		fill_up_dealer_cards();
+	} else {
+		show_endgame_notification();
+	}
+}
+
+function fill_up_dealer_cards() {
+	setTimeout(function () {
+		console.log('Dealer wants to pick');
+		next_card = document.getElementById('pile_unused').children[0];
+
+		turn(next_card);
+		pick_card(next_card, 'dealer');
+		row_offset = row_offset + 100;
+
+		if (score_player > score_dealer && score_dealer < 16) {
+			fill_up_dealer_cards();
+		} else {
+			show_endgame_notification();
+		}
+	}, 125);
+}
+
+function show_endgame_notification() {
+	setTimeout(function () {
+		if (score_player < score_dealer) {
+			show_notification('Du hast verloren');
+		} else {
+			show_notification('Du hast gewonnen');
+		}
+		end_game();
+	}, 200);
 }
 
 function table_setup() {
@@ -53,7 +86,7 @@ function table_setup() {
 
 }
 
-function reset_table() {
+function table_reset() {
 	var pile_unused_element = document.getElementById('pile_unused');
 	pile_unused_element.innerHTML = '';
 
@@ -72,6 +105,9 @@ function reset_table() {
 
 	cards = new Array();
 	row_offset = 0;
+	end_button = false;
+	score_player = 0;
+	score_dealer = 0;
 
 	setTimeout(table_setup, 10);
 }
@@ -82,13 +118,19 @@ function play() {
 	pick_card(this, 'player');
 
 	setTimeout(function() {
-		turn(next_card);
-		pick_card(next_card, 'dealer');
+		if (score_dealer < 16) {
+			turn(next_card);
+			pick_card(next_card, 'dealer');
+		}
+
 	}, 250);
 
-	set_scores();
-
 	row_offset = row_offset + 100;
+	if (!end_button) {
+		console.log("End Button");
+		console.log(end_button);
+		show_end_button();
+	}
 }
 
 function pick_card(card_element, player) {
@@ -119,6 +161,8 @@ function pick_card(card_element, player) {
 		card_element.style.left = row_offset-100-3 +'px';
 		card_element.style.top = '-3px';
 	}, 1);
+
+	set_score(player);
 }
 
 function set_scores() {
@@ -139,15 +183,47 @@ function set_score(player) {
 	};
 	var score_player_element = document.getElementById('score_'+player);
 	score_player_element.innerHTML = score;
+	if (player == 'player') {
+		score_player = score;
+	} else {
+		score_dealer = score;
+	}
 
-	var notification_center = document.getElementById('notification_center');
-	if ((score > 21 && player == 'player') || (score == 21 && player == 'dealer')) {
-		notification_center.innerHTML = 'Du hast verloren';
-		end_game();
-	} else if ((score > 21 && player == 'dealer') || (score == 21 && player == 'player')) {
-		notification_center.innerHTML = 'Du hast gewonnen';
+
+	// if ((score > 21 && player == 'player') || (score == 21 && player == 'dealer')) {
+	// 	show_notification('Du hast verloren');
+	// 	end_game();
+	// } else
+	if ((score > 21 && player == 'dealer') || (score == 21 && player == 'player')) {
+		show_notification('Du hast gewonnen');
 		end_game();
 	}
+}
+
+function show_notification(notification) {
+	var notification_center = document.getElementById('notification_center');
+	notification_center.innerHTML = notification;
+}
+
+function show_end_button() {
+	end_button = true;
+	var notification_center = document.getElementById('notification_center');
+	var end_button_element = document.createElement('button');
+	end_button_element.className = 'button end_button';
+	end_button_element.innerHTML = 'Aufhören';
+	end_button_element.addEventListener('click', evaluate_game, false);
+
+	notification_center.appendChild(end_button_element);
+}
+
+function show_replay_button() {
+	var notification_center = document.getElementById('notification_center');
+	var replay_button = document.createElement('button');
+	replay_button.className = 'button replay_button';
+	replay_button.innerHTML = 'Nochmal';
+	replay_button.addEventListener('click', table_reset, false);
+
+	notification_center.appendChild(replay_button);
 }
 
 function shuffle(cards) {
